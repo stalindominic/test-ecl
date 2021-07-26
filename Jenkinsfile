@@ -27,13 +27,16 @@ pipeline{
                 
             }
             
-            stage('build the code')
+            stage('Test and build the code')
             {
-                steps
-                {
-                    echo "build the java code"
-                    withMaven(maven: 'MAVEN_3.6'){
-                        bat "mvn test"
+                parallel {
+                    stage('test the code'){
+                        
+                          steps
+                               {
+                                echo "build the java code"
+                                withMaven(maven: 'MAVEN_3.6'){
+                                  bat "mvn test"
                     }
                     
                 }
@@ -50,6 +53,7 @@ pipeline{
                     
                 }
             
-                
+              }
          }
     }
+}
