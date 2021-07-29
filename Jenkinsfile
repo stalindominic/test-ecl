@@ -9,7 +9,7 @@ pipeline{
             stage('pull the code from git')
             {
                 steps{
-                    
+                    echo "version of the pipeline $(params.VERSION)"
                     echo "pulling the code from git"
                     git 'https://github.com/stalindominic/test-ecl.git'
                 }
