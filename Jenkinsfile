@@ -1,8 +1,8 @@
 pipeline{
     agent any
     environment{
-      PATH = 
-        //PATH = "C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_291\\bin;C:\\apache-maven-3.8.1\\bin;C:\\Users\\stanl\\AppData\\Local\\Microsoft\\WindowsApps;"
+      PATH = "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/share/maven/bin/:/usr/lib/jvm/java-1.8.0/bin"
+             //PATH = "C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_291\\bin;C:\\apache-maven-3.8.1\\bin;C:\\Users\\stanl\\AppData\\Local\\Microsoft\\WindowsApps;"
     }
         stages{
             stage('pull the code from git')
