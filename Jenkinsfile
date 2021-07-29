@@ -1,9 +1,8 @@
 pipeline{
-    agent {
-        label 'windowsAgent3'
-    }
+    agent any
     environment{
-        PATH = "C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_291\\bin;C:\\apache-maven-3.8.1\\bin;C:\\Users\\stanl\\AppData\\Local\\Microsoft\\WindowsApps;"
+      PATH = 
+        //PATH = "C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_291\\bin;C:\\apache-maven-3.8.1\\bin;C:\\Users\\stanl\\AppData\\Local\\Microsoft\\WindowsApps;"
     }
         stages{
             stage('pull the code from git')
@@ -23,7 +22,8 @@ pipeline{
                 echo "compile code"
                 withMaven(maven: 'MAVEN_3.6')
                 {
-                    bat "mvn clean compile"
+                    //bat "mvn clean compile"
+                    sh "mvn clean compile"
                 }
             
             }
@@ -39,7 +39,8 @@ pipeline{
                                {
                                 echo "build the java code"
                                 withMaven(maven: 'MAVEN_3.6'){
-                                  bat "mvn test"
+                                  //bat "mvn test"
+                                    sh "mvn test"
                     }
                     
                 }
@@ -49,7 +50,8 @@ pipeline{
                     steps{
                         echo "uploding jar file to artifact"
                         withMaven(maven: 'MAVEN_3.6') {
-                            bat "mvn install"
+                            //bat "mvn install"
+                            sh  "mvn install"
                         }
                         
                     }
