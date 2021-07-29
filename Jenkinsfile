@@ -9,7 +9,7 @@ pipeline{
             stage('pull the code from git')
             {
                 steps{
-                    echo "version of the pipeline: $(params.VERSION1.0)"
+                   
                     echo "pulling the code from git"
                     git 'https://github.com/stalindominic/test-ecl.git'
                 }
@@ -19,6 +19,7 @@ pipeline{
             {
             steps('compile the code')
             {
+                 echo "version of the pipeline: $(params.VERSION1.0)"
                 echo "compile code"
                 withMaven(maven: 'MAVEN_3.6')
                 {
