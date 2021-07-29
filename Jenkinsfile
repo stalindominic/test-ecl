@@ -20,7 +20,7 @@ pipeline{
             {
                 //echo "version of the pipeline: ${params.VERSION1}"
                 echo "compile code"
-                withMaven(maven: 'MAVEN_3.6')
+                withMaven(maven: 'MAVEN_3.0')
                 {
                     //bat "mvn clean compile"
                     sh "mvn clean compile"
@@ -38,7 +38,7 @@ pipeline{
                           steps
                                {
                                 echo "build the java code"
-                                withMaven(maven: 'MAVEN_3.6'){
+                                withMaven(maven: 'MAVEN_3.0'){
                                   //bat "mvn test"
                                     sh "mvn test"
                     }
@@ -49,7 +49,7 @@ pipeline{
                 {
                     steps{
                         echo "uploding jar file to artifact"
-                        withMaven(maven: 'MAVEN_3.6') {
+                        withMaven(maven: 'MAVEN_3.0') {
                             //bat "mvn install"
                             sh  "mvn install"
                         }
