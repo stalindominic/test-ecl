@@ -18,7 +18,7 @@ pipeline{
             {
             steps('compile the code')
             {
-                echo "version of the pipeline: ${params.VERSION1}"
+                //echo "version of the pipeline: ${params.VERSION1}"
                 echo "compile code"
                 withMaven(maven: 'MAVEN_3.6')
                 {
