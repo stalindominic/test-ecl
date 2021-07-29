@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        label 'windows Agent2'
+        label 'windowsAgent3'
     }
     environment{
         PATH = "C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk1.8.0_291\\bin;C:\\apache-maven-3.8.1\\bin;C:\\Users\\stanl\\AppData\\Local\\Microsoft\\WindowsApps;"
